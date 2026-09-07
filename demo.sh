@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-BASE="${BASE:-http://localhost:8080}"
+#BASE="${BASE:-http://localhost:8080}"
+BASE="${BASE:-http://0.0.0.0:8080}"
 
 echo "=== GET /health ==="
 curl -i "$BASE/health"
