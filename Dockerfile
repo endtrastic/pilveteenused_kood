@@ -15,6 +15,12 @@ RUN composer install --no-dev --optimize-autoloader --no-interaction
 
 COPY . .
 
+COPY docker-entrypoint.sh ./
+
+RUN chmod +x docker-entrypoint.sh
+
+CMD ["./docker-entrypoint.sh"]
+
 RUN chown -R www-data:www-data /var/www/html
 
 ENV APACHE_DOCUMENT_ROOT=/var/www/html/public
