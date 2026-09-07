@@ -10,12 +10,10 @@ COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
 
 WORKDIR /var/www/html
 
-COPY composer.json composer.lock ./
+COPY composer.json composer.lock, docker-entrypoint.sh ./
 RUN composer install --no-dev --optimize-autoloader --no-interaction
 
 COPY . .
-
-COPY docker-entrypoint.sh ./
 
 RUN chmod +x docker-entrypoint.sh
 
