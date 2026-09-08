@@ -2,6 +2,8 @@ FROM php:8.2-apache
 
 RUN a2enmod rewrite
 
+RUN service apache2 restart
+
 RUN apt-get update && apt-get install -y --no-install-recommends unzip libzip-dev \
     && docker-php-ext-install pdo pdo_mysql zip \
     && rm -rf /var/lib/apt/lists/*
