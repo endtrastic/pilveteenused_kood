@@ -17,11 +17,11 @@ final class Database
             return self::$connection;
         }
 
-        $host = Config::get('DB_HOST', 'localhost');
-        $port = Config::get('DB_PORT', '3306');
-        $name = Config::get('DB_NAME', 'laenutus');
-        $user = Config::get('DB_USER', 'laenutus');
-        $password = Config::get('DB_PASSWORD', 'laenutus123');
+        $host = Config::get('MYSQLHOST', 'localhost');
+        $port = Config::get('MYSQLPORT', '3306');
+        $name = Config::get('MYSQLDATABASE', 'laenutus');
+        $user = Config::get('MYSQLUSER', 'laenutus');
+        $password = Config::get('MYSQLPASSWORD', '');
 
         $dsn = sprintf('mysql:host=%s;port=%s;dbname=%s;charset=utf8mb4', $host, $port, $name);
 
