@@ -16,8 +16,8 @@ final class Database
         if (self::$connection instanceof PDO) {
             return self::$connection;
         }
-
-        $host = Config::get('MYSQLHOST', 'localhost');
+        
+        $host = Config::get('MYSQLHOST', 'mysql.railway.internal');
         $port = Config::get('MYSQLPORT', '3306');
         $name = Config::get('MYSQLDATABASE', 'laenutus');
         $user = Config::get('MYSQLUSER', 'laenutus');
